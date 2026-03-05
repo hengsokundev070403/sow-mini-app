@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import sequelize from './config/database.js';
 import fastifyJwt from '@fastify/jwt';
 import authRoutes from './routes/authRoutes.js';
+import translationRoutes from './routes/translationRoutes.js';
 import 'dotenv/config';
 
 const fastify = Fastify({
@@ -17,6 +18,7 @@ fastify.get('/health', async (request, reply) => {
 });
 
 fastify.register(authRoutes, { prefix: '/api/auth' });
+fastify.register(translationRoutes, { prefix: '/api/translation' });
 
 const startServer = async () => {
   try {
