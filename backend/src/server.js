@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import sequelize from './config/database.js';
 import fastifyJwt from '@fastify/jwt';
 import authRoutes from './routes/authRoutes.js';
+import productRoutes from './routes/productRoutes.js';
 import translationRoutes from './routes/translationRoutes.js';
 import 'dotenv/config';
 
@@ -19,17 +20,17 @@ fastify.get('/health', async (request, reply) => {
 
 fastify.register(authRoutes, { prefix: '/api/auth' });
 fastify.register(translationRoutes, { prefix: '/api/translation' });
+fastify.register(productRoutes, { prefix: '/api/product' });
 
 const startServer = async () => {
   try {
     await sequelize.authenticate();
-    console.log("connected successfully")
+    console.log('connected successfully');
 
     const port = process.env.PORT;
     await fastify.listen({ port: port, host: '0.0.0.0' });
-    
   } catch (error) {
-    console.log("failed to start the server");
+    console.log('failed to start the server');
     console.log(error);
     process.exit(1);
   }

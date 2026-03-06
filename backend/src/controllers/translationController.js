@@ -12,7 +12,7 @@ export const getTranslation = async (request, reply) => {
       return reply.code(404).send({
         message: 'No translations found'
       });
-    }
+    } 
     request.log.error(error);
     return reply.code(500).send({ message: 'Internal Server Error' });
   }
