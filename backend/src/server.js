@@ -1,4 +1,5 @@
 import Fastify from 'fastify';
+import cors from '@fastify/cors';
 import sequelize from './config/database.js';
 import fastifyJwt from '@fastify/jwt';
 import authRoutes from './routes/authRoutes.js';
@@ -9,7 +10,9 @@ import 'dotenv/config';
 const fastify = Fastify({
   logger: true
 });
-
+await fastify.register(cors, {
+  origin: '*', 
+});
 fastify.register(fastifyJwt, {
   secret: process.env.JWT_SECRET
 });
