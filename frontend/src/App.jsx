@@ -1,11 +1,35 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import LoginTopbar from './components/LoginTopbar';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Pricelist from './pages/Pricelist';
+import DummyPage from './pages/DummyPage';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <h1>SOW Mini App Initialized</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={
+          <div className="public-background">
+            <LoginTopbar />
+            <Login />
+          </div>
+        } />
+        
+        <Route path="/register" element={
+          <div className="public-background">
+            <LoginTopbar />
+            <Register />
+          </div>
+        } />
+
+        <Route element={<Layout />}>
+          <Route path="/pricelist" element={<Pricelist />} />
+          <Route path="/customers" element={<DummyPage />} />
+          <Route path="/invoices" element={<DummyPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
