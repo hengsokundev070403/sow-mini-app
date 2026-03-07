@@ -1,4 +1,16 @@
 export const TRANSLATION_KEYS = {
+  LOGIN: {
+    TITLE: 'login_title',
+    LABEL_EMAIL: 'login_email_label',
+    PLACEHOLDER_EMAIL: 'login_email_placeholder',
+    ERROR_EMAIL: 'login_email_error',
+    LABEL_PASSWORD: 'login_password_label',
+    PLACEHOLDER_PASSWORD: 'login_password_placeholder',
+    BTN_SUBMIT: 'login_submit_btn',
+    LINK_REGISTER: 'login_register_link',
+    LINK_FORGOT_PASSWORD: 'login_forgot_password_link'
+  },
+  
   REGISTER: {
     TITLE: 'register_title',
     PLACEHOLDER_BUSINESS_NAME: 'business_name_placeholder',
