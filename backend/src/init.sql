@@ -33,6 +33,26 @@ INSERT INTO users (username, password)
 VALUES ('admin', '$2a$12$7USy10nDucyed6k5Mjo3LedxL5VaJfyhj5TNGOG5frLI.TEXdmX3e');
 
 INSERT INTO translations (lg_code, text_key, value) VALUES 
+-- login
+('en-GB', 'login_title', 'Login'),
+('sv-SE', 'login_title', 'Logga in'),
+('en-GB', 'login_email_label', 'Enter your email address'),
+('sv-SE', 'login_email_label', 'Skriv in din epost adress'),
+('en-GB', 'login_email_placeholder', 'Email address'),
+('sv-SE', 'login_email_placeholder', 'Epost adress'),
+('en-GB', 'login_email_error', 'Please enter a valid email address'),
+('sv-SE', 'login_email_error', 'Vänligen skriv in en giltig epost adress'),
+('en-GB', 'login_password_label', 'Enter your password'),
+('sv-SE', 'login_password_label', 'Skriv in ditt lösenord'),
+('en-GB', 'login_password_placeholder', 'Password'),
+('sv-SE', 'login_password_placeholder', 'Lösenord'),
+('en-GB', 'login_submit_btn', 'Login'),
+('sv-SE', 'login_submit_btn', 'Logga in'),
+('en-GB', 'login_register_link', 'Register'),
+('sv-SE', 'login_register_link', 'Registrera dig'),
+('en-GB', 'login_forgot_password_link', 'Forgot password?'),
+('sv-SE', 'login_forgot_password_link', 'Glömt lösenord?'),
+
 -- registration
 ('en-GB', 'register_title', 'Register'),
 ('sv-SE', 'register_title', 'Registrera'),
@@ -57,7 +77,7 @@ INSERT INTO translations (lg_code, text_key, value) VALUES
 ('en-GB', 'reg_info_trial', 'You can use and try 123 Fakturera for free for 14 days.'),
 ('sv-SE', 'reg_info_trial', 'Du kan använda och prova 123 Fakturera gratis i 14 dagar.'),
 ('en-GB', 'reg_info_full_version', 'This is a true full-version, so you can send out 1000 invoices or more, for free.'),
-('sv-SE', 'reg_info_full_version', 'Detta är en-GB riktig fullversion, så du kan skicka ut 1000 fakturor eller mer, helt gratis.'),
+('sv-SE', 'reg_info_full_version', 'Detta är en riktig fullversion, så du kan skicka ut 1000 fakturor eller mer, helt gratis.'),
 ('en-GB', 'reg_info_subscription', '123 Fakturera is so easy and self-explanatory that the chance that you will need help is minimal, but if you should need support, we are here for you, with our office manned for most part of the day. After the trial period, the subscription continues and costs 99 SEK excluding VAT per month, which is billed annually. If you do not want to keep the program, just cancel the trial period by giving notice before 14 days from today.'),
 ('sv-SE', 'reg_info_subscription', '123 Fakturera är så enkelt och självförklarande att chansen att du behöver hjälp är minimal, men om du skulle behöva support finns vi här för dig, med ett bemannat kontor under största delen av dagen. Efter provperioden fortsätter prenumerationen och kostar 99 SEK exklusive moms per månad, vilket faktureras årligen. Om du inte vill behålla programmet avbryter du bara provperioden genom att meddela oss senast 14 dagar från idag.'),
 ('en-GB', 'reg_info_terms_accept', 'Click Invoice Now to start invoicing and to accept the terms, and your first invoice is normally ready to be sent in 5 - 10 minutes.'),
