@@ -2,10 +2,15 @@ import { createContext, useState, useEffect, useContext } from 'react';
 import { authenticate } from '../api/authentication';
 import axios from 'axios';
 
+const storedToken = localStorage.getItem('token');
+if (storedToken) {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
+}
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [token, setToken] = useState(storedToken);
   const isAuthenticate = !token ? false : true;
 
   useEffect(() => {

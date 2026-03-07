@@ -11,7 +11,8 @@ const fastify = Fastify({
   logger: true
 });
 await fastify.register(cors, {
-  origin: '*', 
+  origin: '*',
+  methods: ['GET','POST', 'PUT', 'DELETE', 'PATCH'],
 });
 fastify.register(fastifyJwt, {
   secret: process.env.JWT_SECRET
