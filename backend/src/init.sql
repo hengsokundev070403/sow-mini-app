@@ -33,6 +33,23 @@ INSERT INTO users (username, password)
 VALUES ('admin', '$2a$12$7USy10nDucyed6k5Mjo3LedxL5VaJfyhj5TNGOG5frLI.TEXdmX3e');
 
 INSERT INTO translations (lg_code, text_key, value) VALUES 
+('en-GB', 'error_empty_field', 'This field cannot be empty'),
+('sv-SE', 'error_empty_field', 'Detta fält kan inte vara tomt'),
+('en-GB', 'error_missing_email', 'Please enter your email'),
+('sv-SE', 'error_missing_email', 'Vänligen ange din e-postadress'),
+-- navbar
+('en-GB', 'nav_home', 'Home'),
+('sv-SE', 'nav_home', 'Hem'),
+('en-GB', 'nav_order', 'Order'),
+('sv-SE', 'nav_order', 'Beställ'),
+('en-GB', 'nav_our_customers', 'Our Customers'),
+('sv-SE', 'nav_our_customers', 'Våra Kunder'),
+('en-GB', 'nav_about_us', 'About us'),
+('sv-SE', 'nav_about_us', 'Om oss'),
+('en-GB', 'nav_contact_us', 'Contact us'),
+('sv-SE', 'nav_contact_us', 'Kontakta oss'),
+('en-GB', 'nav_language_toggle', 'English'),
+('sv-SE', 'nav_language_toggle', 'Svenska'),
 -- login
 ('en-GB', 'login_title', 'Login'),
 ('sv-SE', 'login_title', 'Logga in'),

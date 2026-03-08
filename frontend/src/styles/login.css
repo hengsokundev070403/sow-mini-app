@@ -1,0 +1,305 @@
+.public-background {
+  min-height: 100vh;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  padding: 0 30px;
+  background-color: #fff;
+  border-radius: 30px;
+  width: 95%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input-group {
+  margin-bottom: 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  color: var(--login-red);
+  font-weight: bolder;
+  font-size: 35px;
+  padding: 45px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.login-label {
+  margin-bottom: 8px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.login-input {
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid rgb(204, 204, 204);
+  font-size: 16px;
+  width: 100%;
+}
+
+.login-password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+.password-toggle-btn img {
+  width: 24px;
+  height: 24px;
+}
+.password-input {
+  padding-right: 50px;
+}
+.login-error-msg {
+  align-self: flex-start;
+}
+.login-submit-btn {
+  font-size: 17px;
+  background-color: var(--login-green);
+  color: white;
+  font-weight: bold;
+  border-radius: 40px;
+  width: 50%;
+  padding: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.login-error-msg {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-link {
+  color: gray;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 0 0 20px 0;
+  cursor: pointer;
+}
+
+.login-card-footer {
+  font-weight: bold;
+  color: gray;
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  padding: 20px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 15px;
+  padding: 40px 45px;
+}
+
+.login-topbar-logo {
+  display: none;
+  max-width: 100%;
+  width: 55px;
+  height: 32px;
+}
+
+.login-toggle-lang-btn {
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 15px;
+}
+
+.login-topbar-country {
+  max-width: 100%;
+  width: 26px;
+  height: 18px;
+}
+
+.login-desktop-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.login-desktop-nav {
+  font-weight: bold;
+  font-size: 18px;
+  display: none;
+}
+
+.login-hamburger-btn {
+  font-size: 30px;
+  color: white;
+}
+
+.login-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drop-down-item {
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-mobile-dropdown {
+  position: absolute;
+  top: 80px;
+  max-width: 250px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transition: all 0.4s ease-in-out;
+}
+.login-mobile-dropdown.open {
+  max-width: 250px;
+  max-height: 400px;
+  opacity: 1;
+}
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 20px 0;
+}
+
+.text-section {
+  color: white;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fakturera-text {
+  font-size: xx-large;
+}
+.hr-line {
+  width: 90%;
+}
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  padding: 0 0 20px 0;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: white;
+}
+.copyright {
+  color: white;
+  margin: 20px 0;
+  text-align: center;
+}
+@media (min-width: 300px) {
+  .login-form {
+    width: 100%;
+  }
+}
+@media (min-width: 450px) {
+  .login-mobile-dropdown.open {
+    width: 40%;
+  }
+  .login-mobile-dropdown {
+    width: 100%;
+  }
+}
+@media (min-width: 670px) {
+  .login-card {
+    width: 80%;
+  }
+  .text-section {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+@media (min-width: 1251px) {
+  .login-hamburger-btn {
+    display: none;
+  }
+  .login-mobile-nav {
+    display: none;
+  }
+  .login-topbar-logo {
+    display: block;
+  }
+  .login-topbar {
+    margin: 0 130px;
+  }
+  .login-topbar-logo {
+    width: 100px;
+    height: 60px;
+  }
+  .login-desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 23px;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  .login-input {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .login-form {
+    width: 85%;
+    font-weight: bold;
+  }
+  .login-card {
+    height: 550px;
+    max-width: 750px;
+  }
+  .login-mobile-dropdown {
+    display: none;
+  }
+}

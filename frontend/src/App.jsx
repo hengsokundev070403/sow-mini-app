@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import LoginTopbar from './components/LoginTopbar';
+import LoginFooter from './components/LoginFooter';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Pricelist from './pages/Pricelist';
@@ -17,6 +18,7 @@ export default function App() {
             <div className="public-background">
               <LoginTopbar />
               <Login />
+              <LoginFooter />
             </div>
           }
         />
@@ -27,6 +29,7 @@ export default function App() {
             <div className="public-background">
               <LoginTopbar />
               <Register />
+              <LoginFooter />
             </div>
           }
         />
