@@ -1,4 +1,16 @@
 export const TRANSLATION_KEYS = {
+  ERRORS: {
+    EMPTY_FIELD: 'error_empty_field',
+    MISSING_EMAIL: 'error_missing_email'
+  },
+  NAVBAR: {
+    HOME: 'nav_home',
+    ORDER: 'nav_order',
+    OUR_CUSTOMERS: 'nav_our_customers',
+    ABOUT_US: 'nav_about_us',
+    CONTACT_US: 'nav_contact_us',
+    LANGUAGE_TOGGLE: 'nav_language_toggle'
+  },
   LOGIN: {
     TITLE: 'login_title',
     LABEL_EMAIL: 'login_email_label',
@@ -10,7 +22,7 @@ export const TRANSLATION_KEYS = {
     LINK_REGISTER: 'login_register_link',
     LINK_FORGOT_PASSWORD: 'login_forgot_password_link'
   },
-  
+
   REGISTER: {
     TITLE: 'register_title',
     PLACEHOLDER_BUSINESS_NAME: 'business_name_placeholder',
@@ -28,7 +40,7 @@ export const TRANSLATION_KEYS = {
     INFO_TERMS_ACCEPT: 'reg_info_terms_accept',
     LINK_TERMS: 'terms_link'
   },
-  
+
   MENU: {
     TITLE: 'menu_title',
     INVOICES: 'menu_invoices',
@@ -44,7 +56,7 @@ export const TRANSLATION_KEYS = {
     IMPORT_EXPORT: 'menu_import_export',
     LOG_OUT: 'menu_log_out'
   },
-  
+
   PRICELIST: {
     PLACEHOLDER_SEARCH_ARTICLE: 'search_article_no_placeholder',
     PLACEHOLDER_SEARCH_PRODUCT: 'search_product_placeholder',

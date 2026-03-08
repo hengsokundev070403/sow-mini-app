@@ -1,0 +1,40 @@
+:root {
+  --brand-blue: #0084ff;
+  --bg-gray: #f4f6f9;
+  --login-green: #00a000;
+  --login-red: #ff0000;
+  --text-dark: #333333;
+  --text-light: #888888;
+  --border-color: #e0e0e0;
+
+  --bg-image: url('https://storage.123fakturera.se/public/wallpapers/sverige43.jpg');
+  --logo-icon: url('https://storage.123fakturera.se/public/icons/diamond.png');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-gray);
+}
+
+
+input {
+  outline: none;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
