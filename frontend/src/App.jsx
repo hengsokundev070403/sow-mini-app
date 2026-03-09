@@ -23,22 +23,19 @@ export default function App() {
           }
         />
 
-        <Route
-          path="/register"
-          element={
-            <div className="public-background">
-              <LoginTopbar />
-              <Register />
-              <LoginFooter />
-            </div>
-          }
-        />
-
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
-            <Route path="/pricelist" element={<Pricelist />} />
-            <Route path="/customers" element={<DummyPage />} />
             <Route path="/invoices" element={<DummyPage />} />
+            <Route path="/customers" element={<DummyPage />} />
+            <Route path="/my-business" element={<DummyPage />} />
+            <Route path="/invoice-journal" element={<DummyPage />} />
+            <Route path="/price-list" element={<Pricelist />} />
+            <Route path="/multiple-invoicing" element={<DummyPage />} />
+            <Route path="/unpaid-invoices" element={<DummyPage />} />
+            <Route path="/offer" element={<DummyPage />} />
+            <Route path="/inventory-control" element={<DummyPage />} />
+            <Route path="/member-invoicing" element={<DummyPage />} />
+            <Route path="/import-export" element={<DummyPage />} />
           </Route>
         </Route>
       </Routes>

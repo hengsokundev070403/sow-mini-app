@@ -1,6 +1,6 @@
 .public-background {
   min-height: 100vh;
-  background-image: var(--bg-image);
+  background-image: url('https://storage.123fakturera.se/public/wallpapers/sverige43.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -76,7 +76,6 @@
 .password-toggle-btn {
   position: absolute;
   right: 15px;
-  cursor: pointer;
 }
 .password-toggle-btn img {
   width: 24px;
@@ -96,7 +95,6 @@
   border-radius: 40px;
   width: 50%;
   padding: 16px;
-  cursor: pointer;
   border: none;
 }
 
@@ -112,7 +110,6 @@
   text-decoration: none;
   font-size: 15px;
   padding: 0 0 20px 0;
-  cursor: pointer;
 }
 
 .login-card-footer {

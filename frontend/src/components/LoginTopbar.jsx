@@ -49,7 +49,7 @@ export default function LoginTopbar() {
           </a>
         </nav>
       </div>
-     
+
       <button
         className="login-toggle-lang-btn"
         onClick={() => setLanguage(language === 'en-GB' ? 'sv-SE' : 'en-GB')}

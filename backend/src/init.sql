@@ -30,7 +30,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO users (username, password) 
-VALUES ('admin', '$2a$12$7USy10nDucyed6k5Mjo3LedxL5VaJfyhj5TNGOG5frLI.TEXdmX3e');
+VALUES ('admin@gmail.com', '$2a$12$7USy10nDucyed6k5Mjo3LedxL5VaJfyhj5TNGOG5frLI.TEXdmX3e');
 
 INSERT INTO translations (lg_code, text_key, value) VALUES 
 ('en-GB', 'error_empty_field', 'This field cannot be empty'),

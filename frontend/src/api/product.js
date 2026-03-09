@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`http://192.168.1.17:3000/api/product`);
+    const response = await axios.get(`http://localhost:3000/api/product`);
 
     return response.data.products;
   } catch (error) {
@@ -12,7 +12,7 @@ export const getProducts = async () => {
 export const updateProduct = async (id, updateData) => {
   try {
     const response = await axios.patch(
-      `http://192.168.1.17:3000/api/product/${id}`,
+      `http://localhost:3000/api/product/${id}`,
       updateData
     );
     return response.data.product;

@@ -1,15 +1,16 @@
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import AppTopbar from './AppTopbar';
+import '../styles/layout.css';
 
 export default function Layout() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div className="layout-container">
       <AppTopbar />
-      <div style={{ display: 'flex', flex: 1 }}>
+      <div className="layout-body">
         <Sidebar />
-        <main style={{ padding: '20px', flex: 1 }}>
-          <Outlet /> 
+        <main className="layout-outlet">
+          <Outlet />
         </main>
       </div>
     </div>

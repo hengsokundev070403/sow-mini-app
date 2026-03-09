@@ -3,7 +3,7 @@ import axios from 'axios';
 export const authenticate = async (username, password) => {
   try {
     const response = await axios.post(
-      `http://192.168.1.17:3000/api/auth/login`,
+      `http://localhost:3000/api/auth/login`,
       {
         username,
         password

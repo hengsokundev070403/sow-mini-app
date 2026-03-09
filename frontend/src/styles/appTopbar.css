@@ -1,0 +1,59 @@
+.app-topbar-container {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(15, 126, 233);
+}
+.topbar-flag {
+  max-width: 100%;
+  width: 40px;
+  height: 25px;
+}
+
+.lang-text {
+  font-size: 18px;
+  color: white;
+}
+
+.topbar-lang-btn {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar-hamburger-btn {
+  font-size: 30px;
+  color: white;
+}
+@media (min-width: 10px) {
+  .desktop-mode-hide {
+    display: flex;
+  }
+  .app-user-info {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .app-user-info {
+    display: flex;
+    gap: 20px;
+  }
+  .desktop-mode-hide {
+    display: none;
+  }
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+  }
+  .user-details {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .user-address {
+    font-size: 11px;
+  }
+}
