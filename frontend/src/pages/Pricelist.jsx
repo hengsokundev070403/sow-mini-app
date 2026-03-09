@@ -7,7 +7,7 @@ import Loader from './Loader';
 export default function PriceList() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
     async function fetchProduct() {
       try {
@@ -15,7 +15,8 @@ export default function PriceList() {
 
         setProducts(fetchedProduct);
       } catch (error) {
-        console.log(error);
+        setError('Failed to load products. Please check your connection.');
+        console.error(error);
       } finally {
         setIsLoading(false);
       }
@@ -24,6 +25,13 @@ export default function PriceList() {
   }, []);
   if (isLoading) {
     return <Loader />;
+  }
+  if (error) {
+    return (
+      <div style={{ textAlign: 'center', padding: '50px', color: 'red' }}>
+        {error}
+      </div>
+    );
   }
   return (
     <div className="pricelist-container">
@@ -142,47 +150,54 @@ export default function PriceList() {
         </div>
       </div>
       <div className="pricelist-table-container">
-        <table className="pricelist-table">
-          <colgroup>
-            <col className="col1" />
-            <col className="col2" />
-            <col className="col3" />
-            <col className="col4" />
-            <col className="col5" />
-            <col className="col6" />
-            <col className="col7" />
-            <col className="col8" />
-            <col className="col9" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th className="col-indicator"></th>
-              <th className="col-article mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                Article No.
-              </th>
-              <th className="col-product">Product/Service</th>
-              <th className="col-inprice mobile-mode-hide tablet-mode-hide">
-                In Price
-              </th>
-              <th className="col-price">Price</th>
-              <th className="col-stock mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                In Stock
-              </th>
-              <th className="col-unit mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                Unit
-              </th>
-              <th className="col-desc mobile-mode-hide tablet-mode-hide">
-                Description
-              </th>
-              <th className="col-menu"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((prod) => (
-              <ProductRow key={prod.id} product={prod} />
-            ))}
-          </tbody>
-        </table>
+        {products.length === 0 ? (
+          //only used in here that's why i do inline styling
+          <div style={{ textAlign: 'center', padding: '50px', color: 'gray' }}>
+            <h3>No products found.</h3>
+          </div>
+        ) : (
+          <table className="pricelist-table">
+            <colgroup>
+              <col className="col1" />
+              <col className="col2" />
+              <col className="col3" />
+              <col className="col4" />
+              <col className="col5" />
+              <col className="col6" />
+              <col className="col7" />
+              <col className="col8" />
+              <col className="col9" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th className="col-indicator"></th>
+                <th className="col-article mobile-mode-hide tablet-mode-hide portrait-mode-hide">
+                  Article No.
+                </th>
+                <th className="col-product">Product/Service</th>
+                <th className="col-inprice mobile-mode-hide tablet-mode-hide">
+                  In Price
+                </th>
+                <th className="col-price">Price</th>
+                <th className="col-stock mobile-mode-hide tablet-mode-hide portrait-mode-hide">
+                  In Stock
+                </th>
+                <th className="col-unit mobile-mode-hide tablet-mode-hide portrait-mode-hide">
+                  Unit
+                </th>
+                <th className="col-desc mobile-mode-hide tablet-mode-hide">
+                  Description
+                </th>
+                <th className="col-menu"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((prod) => (
+                <ProductRow key={prod.id} product={prod} />
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

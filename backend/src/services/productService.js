@@ -16,7 +16,5 @@ export const updateProduct = async (productId, updatedData) => {
   }
 
   const updatedProduct = await product.update(updatedData);
-  console.log(updatedData);
-  console.log('updated', updatedProduct.toJSON());
   return updatedProduct;
 };

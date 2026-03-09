@@ -27,7 +27,7 @@ export default function ProductRow({ product }) {
         });
       }
     } catch (error) {
-      console.log('error saving product', error);
+      console.error('error saving product', error);
     }
   };
   return (

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+.wrapper {
+  margin-bottom: 100px;
+}
+.error-number {
+  font-size: 50px;
+  color: #34e2fb;
+}
+
+.message {
+  color: gray;
+}
+.btn-wrapper {
+  width: 100%;
+  padding-top: 20px;
+}
+.return-link {
+  padding: 10px 20px;
+  color: white;
+  background-color: #489b4f;
+  border-radius: 10px;
+  text-decoration: none;
+}

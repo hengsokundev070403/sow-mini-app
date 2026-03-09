@@ -21,7 +21,7 @@ export const LanguageProvider = ({ children }) => {
         const data = await getTranslation(language);
         setTranslation(data);
       } catch (error) {
-        console.log(error.message);
+        console.error(error.message);
       } finally {
         setIsLoading(false);
       }
