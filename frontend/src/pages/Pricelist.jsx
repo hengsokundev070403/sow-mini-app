@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getProducts } from '../api/product';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATION_KEYS } from '../constants/translationKeys';
 import ProductRow from '../components/ProductRow';
 import '../styles/pricelist.css';
 import Loader from './Loader';
@@ -7,6 +9,7 @@ import Loader from './Loader';
 export default function PriceList() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { translation } = useLanguage();
   const [error, setError] = useState(null);
   useEffect(() => {
     async function fetchProduct() {
@@ -23,7 +26,7 @@ export default function PriceList() {
     }
     fetchProduct();
   }, []);
-  if (isLoading) {
+  if (isLoading || translation == null) {
     return <Loader />;
   }
   if (error) {
@@ -38,7 +41,14 @@ export default function PriceList() {
       <div className="pricelist-toolbar">
         <div className="toolbar-search-group">
           <div className="search-input-wrapper">
-            <input type="text" placeholder="Search Article No ..." />
+            <input
+              type="text"
+              placeholder={
+                translation[
+                  TRANSLATION_KEYS.PRICELIST.PLACEHOLDER_SEARCH_ARTICLE
+                ]
+              }
+            />
             <span className="search-icon">
               <svg
                 fill="#9ef0f5"
@@ -51,7 +61,14 @@ export default function PriceList() {
             </span>
           </div>
           <div className="search-input-wrapper">
-            <input type="text" placeholder="Search Product ..." />
+            <input
+              type="text"
+              placeholder={
+                translation[
+                  TRANSLATION_KEYS.PRICELIST.PLACEHOLDER_SEARCH_PRODUCT
+                ]
+              }
+            />
             <span className="search-icon">
               <svg
                 fill="#9ef0f5"
@@ -67,7 +84,7 @@ export default function PriceList() {
         <div className="toolbar-action-group">
           <button className="action-btn btn-new">
             <span className="btn-text mobile-mode-hide tablet-mode-hide">
-              New Product
+              {translation[TRANSLATION_KEYS.PRICELIST.BTN_NEW_PRODUCT]}
             </span>
             <span className="btn-icon">
               <svg
@@ -86,7 +103,7 @@ export default function PriceList() {
           </button>
           <button className="action-btn btn-print">
             <span className="btn-text mobile-mode-hide tablet-mode-hide">
-              Print List
+              {translation[TRANSLATION_KEYS.PRICELIST.BTN_PRINT_LIST]}
             </span>
             <span className="btn-icon">
               <svg viewBox="0 0 15 15" width="20px" height="20px">
@@ -118,7 +135,7 @@ export default function PriceList() {
           </button>
           <button className="action-btn">
             <span className="btn-text mobile-mode-hide tablet-mode-hide">
-              Advanced mode
+              {translation[TRANSLATION_KEYS.PRICELIST.BTN_ADVANCED_MODE]}
             </span>
             <span className="btn-icon">
               <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none">
@@ -172,21 +189,25 @@ export default function PriceList() {
               <tr>
                 <th className="col-indicator"></th>
                 <th className="col-article mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                  Article No.
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_ARTICLE_NO]}
                 </th>
-                <th className="col-product">Product/Service</th>
+                <th className="col-product">
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_PRODUCT_SERVICE]}
+                </th>
                 <th className="col-inprice mobile-mode-hide tablet-mode-hide">
-                  In Price
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_IN_PRICE]}
                 </th>
-                <th className="col-price">Price</th>
+                <th className="col-price">
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_PRICE]}
+                </th>
                 <th className="col-stock mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                  In Stock
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_IN_STOCK]}
                 </th>
                 <th className="col-unit mobile-mode-hide tablet-mode-hide portrait-mode-hide">
-                  Unit
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_UNIT]}
                 </th>
                 <th className="col-desc mobile-mode-hide tablet-mode-hide">
-                  Description
+                  {translation[TRANSLATION_KEYS.PRICELIST.TH_DESCRIPTION]}
                 </th>
                 <th className="col-menu"></th>
               </tr>
