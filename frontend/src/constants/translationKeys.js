@@ -23,24 +23,6 @@ export const TRANSLATION_KEYS = {
     LINK_FORGOT_PASSWORD: 'login_forgot_password_link'
   },
 
-  REGISTER: {
-    TITLE: 'register_title',
-    PLACEHOLDER_BUSINESS_NAME: 'business_name_placeholder',
-    PLACEHOLDER_CONTACT_PERSON: 'contact_person_placeholder',
-    PLACEHOLDER_ADDRESS: 'address_placeholder',
-    PLACEHOLDER_POSTAL_NUMBER: 'postal_number_placeholder',
-    PLACEHOLDER_CITY: 'city_placeholder',
-    PLACEHOLDER_EMAIL: 'email_address_placeholder',
-    PLACEHOLDER_PHONE: 'phone_number_placeholder',
-    PLACEHOLDER_PASSWORD: 'choose_password_placeholder',
-    BTN_INVOICE_NOW: 'invoice_now_btn',
-    INFO_TRIAL: 'reg_info_trial',
-    INFO_FULL_VERSION: 'reg_info_full_version',
-    INFO_SUBSCRIPTION: 'reg_info_subscription',
-    INFO_TERMS_ACCEPT: 'reg_info_terms_accept',
-    LINK_TERMS: 'terms_link'
-  },
-
   MENU: {
     TITLE: 'menu_title',
     INVOICES: 'menu_invoices',
