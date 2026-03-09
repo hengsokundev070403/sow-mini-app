@@ -29,13 +29,10 @@ fastify.register(productRoutes, { prefix: '/api/product' });
 const startServer = async () => {
   try {
     await sequelize.authenticate();
-    console.log('connected successfully');
-
     const port = process.env.PORT;
     await fastify.listen({ port: port, host: '0.0.0.0' });
   } catch (error) {
-    console.log('failed to start the server');
-    console.log(error);
+    console.error(error);
     process.exit(1);
   }
 };

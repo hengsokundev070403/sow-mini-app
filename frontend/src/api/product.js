@@ -1,7 +1,9 @@
 import axios from 'axios';
+
+const BASE_URL = import.meta.env.VITE_API_URL;
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/product`);
+    const response = await axios.get(`${BASE_URL}/product`);
 
     return response.data.products;
   } catch (error) {
@@ -12,7 +14,7 @@ export const getProducts = async () => {
 export const updateProduct = async (id, updateData) => {
   try {
     const response = await axios.patch(
-      `http://localhost:3000/api/product/${id}`,
+      `${BASE_URL}/${id}`,
       updateData
     );
     return response.data.product;

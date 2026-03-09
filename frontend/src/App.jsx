@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import LoginTopbar from './components/LoginTopbar';
 import LoginFooter from './components/LoginFooter';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import NotFound from './pages/NotFound';
 import Pricelist from './pages/Pricelist';
 import DummyPage from './pages/DummyPage';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -37,6 +37,7 @@ export default function App() {
             <Route path="/member-invoicing" element={<DummyPage />} />
             <Route path="/import-export" element={<DummyPage />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

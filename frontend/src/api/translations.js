@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL;
 export const getTranslation = async (langCode) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/translation/${langCode}`
+      `${BASE_URL}/translation/${langCode}`
     );
 
     return response.data.dictionary;
