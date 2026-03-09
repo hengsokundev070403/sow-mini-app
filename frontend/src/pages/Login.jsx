@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 import { useState } from 'react';
 import { TRANSLATION_KEYS } from '../constants/translationKeys.js';
 import '../styles/login.css';
+import Loader from './Loader.jsx';
 
 export default function Login() {
   const { translation, isLoading } = useLanguage();
@@ -17,7 +18,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   if (isLoading || translation == null) {
-    return <div>loading ui</div>;
+    return <Loader />;
   }
 
   const handleSubmit = async (e) => {
@@ -105,10 +106,10 @@ export default function Login() {
         </form>
 
         <div className="login-card-footer">
-          <a href="/register" className="login-link">
+          <navlink href="#" className="login-link">
             {translation[TRANSLATION_KEYS.LOGIN.LINK_REGISTER]}
-          </a>
-          <a href="/forgot-password" className="login-link">
+          </navlink>
+          <a href="#" className="login-link">
             {translation[TRANSLATION_KEYS.LOGIN.LINK_FORGOT_PASSWORD]}
           </a>
         </div>
