@@ -33,7 +33,7 @@ export default function Login() {
 
     const loginSuccess = await authContext.login(username, password);
     if (loginSuccess) {
-      navigate('/pricelist');
+      navigate('/price-list');
     }
   };
 
