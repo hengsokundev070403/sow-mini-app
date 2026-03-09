@@ -5,9 +5,14 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [translation, setTranslation] = useState(null);
-  const [language, setLanguage] = useState('en-GB');
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'en-GB';
+  });
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
   useEffect(() => {
     async function fetchTranslation() {
       try {
