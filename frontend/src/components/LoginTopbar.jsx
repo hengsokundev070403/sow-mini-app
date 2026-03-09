@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext.jsx';
 import { TRANSLATION_KEYS } from '../constants/translationKeys.js';
 import '../styles/login.css';
+import Loader from '../pages/Loader.jsx';
 
 export default function LoginTopbar() {
   const { language, setLanguage, translation, isLoading } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   if (isLoading || translation == null) {
-    return <div>loading ui</div>;
+    return <Loader />
   }
 
   return (

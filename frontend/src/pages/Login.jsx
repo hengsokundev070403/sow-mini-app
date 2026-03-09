@@ -1,7 +1,7 @@
 import { useLanguage } from '../context/LanguageContext.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TRANSLATION_KEYS } from '../constants/translationKeys.js';
 import '../styles/login.css';
 import Loader from './Loader.jsx';
@@ -16,7 +16,14 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('token');
 
+    if (token) {
+      navigate('/price-list', { replace: true });
+    }
+  }, [navigate]);
+  
   if (isLoading || translation == null) {
     return <Loader />;
   }
