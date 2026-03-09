@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getProducts } from '../api/product';
 import ProductRow from '../components/ProductRow';
 import '../styles/pricelist.css';
+import Loader from './Loader';
 
 export default function PriceList() {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ export default function PriceList() {
     fetchProduct();
   }, []);
   if (isLoading) {
-    return <div>loading products</div>;
+    return <Loader />;
   }
   return (
     <div className="pricelist-container">
@@ -160,7 +161,9 @@ export default function PriceList() {
                 Article No.
               </th>
               <th className="col-product">Product/Service</th>
-              <th className="col-inprice mobile-mode-hide tablet-mode-hide">In Price</th>
+              <th className="col-inprice mobile-mode-hide tablet-mode-hide">
+                In Price
+              </th>
               <th className="col-price">Price</th>
               <th className="col-stock mobile-mode-hide tablet-mode-hide portrait-mode-hide">
                 In Stock
@@ -168,7 +171,9 @@ export default function PriceList() {
               <th className="col-unit mobile-mode-hide tablet-mode-hide portrait-mode-hide">
                 Unit
               </th>
-              <th className="col-desc mobile-mode-hide tablet-mode-hide">Description</th>
+              <th className="col-desc mobile-mode-hide tablet-mode-hide">
+                Description
+              </th>
               <th className="col-menu"></th>
             </tr>
           </thead>

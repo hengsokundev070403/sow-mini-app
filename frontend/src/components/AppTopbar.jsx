@@ -2,12 +2,13 @@ import { useLanguage } from '../context/LanguageContext.jsx';
 import { TRANSLATION_KEYS } from '../constants/translationKeys.js';
 import '../styles/appTopbar.css';
 import profileImage from '../assets/profile.png';
+import Loader from '../pages/Loader.jsx';
 
 export default function AppTopbar() {
   const { language, setLanguage, translation, isLoading } = useLanguage();
 
   if (isLoading || translation == null) {
-    return <div>loading ui</div>;
+    return <Loader />;
   }
 
   return (
