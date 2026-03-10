@@ -2,11 +2,12 @@ import '../styles/sidebar.css';
 import { NavLink } from 'react-router-dom';
 import { TRANSLATION_KEYS } from '../constants/translationKeys.js';
 import { useLanguage } from '../context/LanguageContext.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 import Loader from '../pages/Loader.jsx';
 
 export default function Sidebar() {
   const { translation, isLoading } = useLanguage();
-
+  const { logout } = useAuth();
   if (isLoading || translation == null) {
     return <Loader />;
   }
@@ -215,7 +216,7 @@ export default function Sidebar() {
               {translation[TRANSLATION_KEYS.MENU.IMPORT_EXPORT]}
             </span>
           </NavLink>
-          <a href="#" className="sidebar-menu-item">
+          <a href="#" className="sidebar-menu-item" onClick={logout}>
             <span className="sidebar-icon">
               <svg viewBox="0 0 24 26" width="20" height="20" fill="#34e2fb">
                 <path d="M15,24H0V2h15v8h-2V4H2v18h11v-6h2V24z M18.4,18.7L17,17.3l3.3-3.3H5v-2h15.3L17,8.7l1.4-1.4L24,13L18.4,18.7z" />
