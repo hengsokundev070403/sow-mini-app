@@ -18,7 +18,8 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', token);
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
-      axios.defaults.headers.common['Authorization'] = null;
+      localStorage.removeItem('token');
+      delete axios.defaults.headers.common['Authorization'];
     }
   }, [token]);
 
@@ -27,9 +28,9 @@ export const AuthProvider = ({ children }) => {
       const data = await authenticate(username, password);
 
       if (!data) {
-        return false; 
+        return false;
       }
-      
+
       setToken(data.token);
       return true;
     } catch (error) {
