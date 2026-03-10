@@ -13,10 +13,7 @@ export const getProducts = async () => {
 };
 export const updateProduct = async (id, updateData) => {
   try {
-    const response = await axios.patch(
-      `${BASE_URL}/${id}`,
-      updateData
-    );
+    const response = await axios.patch(`${BASE_URL}/product/${id}`, updateData);
     return response.data.product;
   } catch (error) {
     console.error('Error editing product:', error);
